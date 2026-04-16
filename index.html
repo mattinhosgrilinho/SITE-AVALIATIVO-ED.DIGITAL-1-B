@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deadpool | O Mercenário Tagarela</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="container">
+            <div class="logo">Dead<span>pool</span></div>
+            <div class="accessibility-controls">
+                <button id="increase-font" aria-label="Aumentar fonte">A+</button>
+                <button id="decrease-font" aria-label="Diminuir fonte">A-</button>
+                <button id="toggle-contrast" aria-label="Alternar alto contraste">🌓</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero scroll-reveal" aria-labelledby="hero-title">
+            <div class="container">
+                <h1 id="hero-title">Chimichangas e Caos</h1>
+                <p>O anti-herói mais amado (e irritante) da Marvel.</p>
+                <a href="#galeria" class="btn-primary">Ver Arsenal</a>
+            </div>
+        </section>
+
+        <section id="galeria" class="container scroll-reveal" aria-labelledby="gallery-title">
+            <h2 id="gallery-title">Galeria de Atrocidades</h2>
+            <div id="gallery-wrapper" class="grid-layout">
+                </div>
+        </section>
+
+        <section class="container scroll-reveal" aria-labelledby="faq-title">
+            <h2 id="faq-title">Por que me amar?</h2>
+            <div id="faq-container" class="accordion">
+                </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Deadpool Inc. - Nenhum herói foi ferido (muito) na criação deste site.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
