@@ -1,49 +1,36 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deadpool | O Mercenário Tagarela</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="main-header">
-        <nav class="container">
-            <div class="logo">Dead<span>pool</span></div>
-            <div class="accessibility-controls">
-                <button id="increase-font" aria-label="Aumentar fonte">A+</button>
-                <button id="decrease-font" aria-label="Diminuir fonte">A-</button>
-                <button id="toggle-contrast" aria-label="Alternar alto contraste">🌓</button>
+<main>
+    <section class="hero scroll-reveal" aria-labelledby="hero-title">
+        <div class="container">
+            <h1 id="hero-title">Chimichangas, Katanas e Caos</h1>
+            <p>O anti-herói que quebra a quarta parede e o seu orçamento de limpeza.</p>
+            <div class="hero-actions">
+                <a href="#arsenal" class="btn-primary">Ver Arsenal</a>
+                <a href="#historia" class="btn-secondary">Minha História</a>
             </div>
-        </nav>
-    </header>
+        </div>
+    </section>
 
-    <main>
-        <section class="hero scroll-reveal" aria-labelledby="hero-title">
-            <div class="container">
-                <h1 id="hero-title">Chimichangas e Caos</h1>
-                <p>O anti-herói mais amado (e irritante) da Marvel.</p>
-                <a href="#galeria" class="btn-primary">Ver Arsenal</a>
+    <section id="arsenal" class="container scroll-reveal" aria-labelledby="arsenal-title">
+        <h2 id="arsenal-title">Arsenal de Combate</h2>
+        <div id="gallery-wrapper" class="grid-layout">
             </div>
-        </section>
+    </section>
 
-        <section id="galeria" class="container scroll-reveal" aria-labelledby="gallery-title">
-            <h2 id="gallery-title">Galeria de Atrocidades</h2>
-            <div id="gallery-wrapper" class="grid-layout">
+    <section id="historia" class="container scroll-reveal" aria-labelledby="history-title">
+        <h2 id="history-title">Fatos (Quase) Reais</h2>
+        <div class="tabs-container">
+            <div class="tab-buttons" role="tablist">
+                <button class="tab-btn active" role="tab" data-tab="0">Origem</button>
+                <button class="tab-btn" role="tab" data-tab="1">Poderes</button>
+                <button class="tab-btn" role="tab" data-tab="2">Equipe</button>
+            </div>
+            <div id="tab-content" class="tab-panel" role="tabpanel">
                 </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="container scroll-reveal" aria-labelledby="faq-title">
-            <h2 id="faq-title">Por que me amar?</h2>
-            <div id="faq-container" class="accordion">
-                </div>
-        </section>
-    </main>
-
-    <footer class="main-footer">
-        <p>&copy; 2026 Deadpool Inc. - Nenhum herói foi ferido (muito) na criação deste site.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+    <section class="container scroll-reveal" aria-labelledby="faq-title">
+        <h2 id="faq-title">Perguntas Idiotas</h2>
+        <div id="faq-container" class="accordion"></div>
+    </section>
+</main>
