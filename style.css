@@ -1,32 +1,112 @@
-/* --- COMPONENTES ADICIONAIS --- */
-
-/* Botões */
-.btn-primary, .btn-secondary {
-    display: inline-block;
-    padding: 12px 25px;
-    border-radius: var(--radius);
-    text-decoration: none;
-    font-weight: bold;
-    transition: var(--transition);
-    margin-right: 10px;
+/* --- DESIGN SYSTEM & VARIABLES --- */
+:root {
+    --primary: #c40202;
+    --secondary: #1a1a1a;
+    --text: #ffffff;
+    --bg: #0d0d0d;
+    --radius: 8px;
+    --gap: 20px;
+    --font-base: 16px;
+    --transition: all 0.3s ease-in-out;
 }
-.btn-primary { background: var(--primary); color: white; }
-.btn-secondary { border: 2px solid var(--primary); color: var(--text); }
-.btn-primary:hover { filter: brightness(1.2); }
 
-/* Tabs System */
-.tabs-container {
-    background: #151515;
-    border-radius: var(--radius);
+/* --- MODO ALTO CONTRASTE --- */
+body.high-contrast {
+    --primary: #ffff00;
+    --secondary: #000000;
+    --text: #ffffff;
+    --bg: #000000;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    font-size: var(--font-base);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+
+/* --- HEADER --- */
+.main-header {
+    background: var(--secondary);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--primary);
+}
+
+.main-header nav { display: flex; justify-content: space-between; align-items: center; }
+
+.logo { font-size: 1.5rem; font-weight: bold; text-transform: uppercase; }
+.logo span { color: var(--primary); }
+
+/* --- GRID LAYOUT (Edite aqui o layout dos cards) --- */
+.grid-layout {
+    display: grid;
+    gap: var(--gap);
+    /* Mobile-first: 1 coluna */
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+    .grid-layout { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* --- CARDS & ACCORDION --- */
+.card {
+    background: #222;
     padding: 20px;
+    border-radius: var(--radius);
+    border-left: 5px solid var(--primary);
+    transition: var(--transition);
 }
-.tab-buttons {
-    display: flex;
-    gap: 10px;
-    border-bottom: 2px solid #333;
-    margin-bottom: 20px;
+
+.card:hover { transform: translateY(-5px); }
+
+.accordion-item {
+    background: #1a1a1a;
+    margin-bottom: 10px;
+    border-radius: var(--radius);
+    overflow: hidden;
 }
-.tab-btn {
-    background: transparent;
+
+.accordion-header {
+    background: var(--primary);
+    color: white;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
     border: none;
-    color: #8
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.accordion-content {
+    padding: 0;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+}
+
+.accordion-content.active {
+    padding: 15px;
+    max-height: 200px;
+}
+
+/* --- ANIMATIONS (Scroll Reveal) --- */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
